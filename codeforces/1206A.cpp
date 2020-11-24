@@ -8,27 +8,23 @@ const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 int main(){
     
     int A = -1, B = -1;
-
+    int a_max = -INF;
+    int b_max = -INF;
     std::cin >> A;
-    int vec_A[A];
     for(int i = 0; i < A; ++i) {
         int temp = -1;
         std::cin >> temp;
-        vec_A[i] = temp;
+        a_max = a_max > temp ? a_max : temp;
     }
 
     std::cin >> B;
-    int vec_B[B];
     for(int i = 0; i < B; ++i) {
         int temp = -1;
         std::cin >> temp;
-        vec_B[i] = temp;
+        b_max = b_max > temp ? b_max : temp;
     }
 
-    std::sort(vec_A, vec_A + A);
-    std::sort(vec_B, vec_B + B);
-    
-    std::cout << vec_A[A-1] << " " << vec_B[B-1] << std::endl;
+    std::cout << a_max << " " << b_max << std::endl;
 
 }
 
