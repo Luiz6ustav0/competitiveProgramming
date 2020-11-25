@@ -7,12 +7,12 @@ const ll LINF = 0x3f3f3f3f3f3f3f3fll;
 
 int main(){
     char c;
-    int countOnes = 0;
-    int countZeros = 0;
 
     int inputLength = -1;
     std::cin >> inputLength;
     
+    std::map<char, int> myMap;
+
     if (inputLength <= 0) {
         std::cout << 0 << std::endl;
         return 0;
@@ -20,17 +20,16 @@ int main(){
 
     for (int i = 0; i < inputLength; ++i) {
         std::cin >> c;
-        if (c == 'n') countOnes += 1;
-        if (c == 'z') countZeros += 1;
+        if (c == 'n' || c == 'z') myMap[c] += 1;
     } 
-    
-    for (int i = 0; i < countOnes; ++i)
+
+    for (int i = 0; i < myMap['n']; ++i)
         std::cout << 1 << ' ';
     
-    for (int i = 0; i < countZeros - 1; ++i)
+    for (int i = 0; i < myMap['z'] - 1; ++i)
         std:: cout << 0 << ' ';
     
-    if (countZeros - 1 >= 0) std::cout << 0;
+    if (myMap['z'] - 1 >= 0) std::cout << 0;
         
     std::cout << std::endl;
 }
