@@ -14,4 +14,6 @@ main: $(FILE)
 clean:
 	@rm *.out
 	@echo "Cleaned up successfully :)"
- 
+
+run:
+	@./main.out
